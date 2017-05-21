@@ -1,0 +1,58 @@
+<view style="background-color:#ffffff">
+    <view class="page">
+        <view class="page__bd"hidden="{{hid}}">
+            <view class="weui-article">
+                <view class="weui-article__h1">To:{{name}}</view>
+
+                <view class="weui-article__section">
+                    <view class="weui-article__title"></view>
+
+                    <view class="weui-article__section">
+
+                        <view class="weui-article__p">
+                            {{content}}
+                        </view>
+                    </view>
+                </view>
+                <view class="weui-media-box__info" style="margin-bottom: 10px;">
+                    <view class="weui-media-box__info__meta">{{from_}}</view>
+                    <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{date}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view style="margin-top:-70rpx;background:#EFEFF4 ;height:10rpx">
+
+        <view class="border" wx:for="{{replay}}" wx:key="item">
+                <view style="display:flex;">
+                    <image class="userinfo-avatar" src="{{item.headimgurl==''?'../images/user.png':item.headimgurl}}"></image>
+                <view style="margin-left:0PX">
+                <view class="weui-article">
+                        <view class="weui-article__p">{{item.content}}</view>
+                        <view class="weui-media-box__info">
+                            <view class="weui-media-box__info__meta">{{item.nickname==''?'匿名':item.nickname}}发布于 {{item.dateline}}</view>
+                        </view>
+                    </view>
+                </view>    
+                    
+            </view>
+        </view>
+ 
+
+    </view>
+<view class="weui-search-bar" style="position: fixed; bottom: 0; width: 100%;">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon bindtap="hideInput" class="weui-icon-search_in-box" type="cancel" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="回复" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" confirm-type="search"/>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <view class="weui-search-bar__text">回复</view>
+                </label>
+            </view>
+             <view class="weui-search-bar__cancel-btn  {{click ? 'weui-search-bar__cancel-btn_show' : ''}}" bindtap="sendmsg" hidden="{{!inputShowed}}">
+            <image class="edit" src="../images/send.png"></image></view>
+        </view>
+
+</view>
+    

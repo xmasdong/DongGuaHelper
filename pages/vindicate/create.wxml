@@ -1,0 +1,35 @@
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="page__bd">
+         <form bindsubmit="formBindsubmit" bindreset="formReset">
+        <view class="weui-cells__title">To</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input"name="to"/>
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells__title">说点什么</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea class="weui-textarea" name="content" style="height: 3.3em" />
+                    <view class="weui-textarea-counter"></view>
+                </view>
+            </view>
+        </view>
+
+<view class="weui-cells__title">From</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" value="匿名发布" name="from_"></input>
+                </view>
+            </view>
+        </view>
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" formType="submit">确定</button>
+        </view>
+        </form>
+    </view>
+</view>

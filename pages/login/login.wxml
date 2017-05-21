@@ -1,0 +1,49 @@
+<!--index.wxml-->
+
+<view >
+    <view >
+        <view class="userinfo">
+            <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}"
+                   background-size="cover"></image>
+            <text class="userinfo-nickname" bindtap="bindViewTapTO">{{userInfo.nickName}}</text>
+        </view>
+    </view>
+    <form bindsubmit="formBindsubmit" bindreset="formReset">
+        <view class="weui-cells__title">教务绑定</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">学号</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input " name="xuehao" placeholder="请输入学号"/>
+                </view>
+            </view>
+
+        </view>
+
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">密码</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="password" password placeholder="默认身份证后6位"/>
+                </view>
+            </view>
+
+        </view>
+
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" formType="submit">确定</button>
+        </view>
+    </form>
+
+<view class="weui-footer weui-footer_fixed-bottom">
+    <view class="weui-footer__links">
+        <navigator url="" class="weui-footer__link">冬瓜学长</navigator>
+    </view>
+    <view class="weui-footer__text">Copyright © 2008-2016 xmasdong.cn</view>
+</view>
+
+</view>

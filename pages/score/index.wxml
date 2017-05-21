@@ -1,0 +1,46 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">Transcripts</view>
+        <view class="page__desc">{{user.name}}</view>
+    </view>
+    <view class="page__bd" wx:for="{{score}}" wx:key="{{item}}">
+        
+        <view class="weui-form-preview">
+            <view class="weui-form-preview__hd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">{{item.year}}</view>
+                    <view class="weui-form-preview__value_in-hd">{{item.subject}}</view>
+                </view>
+            </view>
+            <view class="weui-form-preview__bd">
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">学期</view>
+                    <view class="weui-form-preview__value">{{item.term}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">综合分</view>
+                    <view class="weui-form-preview__value">{{item.ending}}</view>
+                </view>
+                <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">补考</view>
+                    <view class="weui-form-preview__value">{{item.make_up}}</view>
+                </view>
+
+  <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">绩点</view>
+                    <view class="weui-form-preview__value">{{item.point}}</view>
+                </view>
+
+
+                  <view class="weui-form-preview__item">
+                    <view class="weui-form-preview__label">学分</view>
+                    <view class="weui-form-preview__value">{{item.credit}}</view>
+                </view>
+
+            </view>
+            
+        </view>
+       
+            
+    </view>
+</view>

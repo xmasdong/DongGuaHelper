@@ -1,0 +1,19 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/book/index",
+    "pages/vindicate/index",
+    "pages/vindicate/detail",
+    "pages/vindicate/create",
+    "pages/score/index",
+    "pages/login/login"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "backgroundColor":"#EFEFF4",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black",
+    "navigationBarBackgroundColor": "#ffffff",
+     "enablePullDownRefresh":false
+  }
+}

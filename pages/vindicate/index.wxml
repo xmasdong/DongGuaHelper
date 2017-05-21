@@ -1,0 +1,66 @@
+<view style="background-color:#EFEFF4">
+    <view >
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" confirm-type="search"/>
+                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">搜索</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+            <view class="weui-search-bar__cancel-btn  {{click ? 'weui-search-bar__cancel-btn_show' : ''}}" bindtap="create_new" hidden="{{createShowed}}">
+            <image class="edit" src="../images/edit.png"></image></view>
+        </view>
+        <view class="weui-cells searchbar-result" hidden="{{!searchShowed}}" wx:if="{{search_result.length > 0}}">
+            <view class="weui-cell" bindtap="searche" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">
+                    <view>{{search_result}}</view>
+                </view>
+            </view>
+
+            <view class="weui-cell" bindtap="searche" hover-class="weui-cell_active" wx:if="{{ search_result!=='未查到记录'}}">
+                <view class="weui-cell__bd">
+                    <view>更多关于“{{search_result}}”的搜索结果</view>
+                </view>
+            </view>
+        </view>
+
+   </view>
+   <view class="container" wx:for="{{biaobai_lists}}">
+    <view class="weui-panel" data-id="{{item.id}}" bindtap="navigate_to">
+            <view class="weui-panel__hd">{{item.id}}</view>
+            <view class="weui-panel__bd">
+           
+                <view class="weui-media-box weui-media-box_text">
+                    <view class="weui-media-box__title weui-media-box__title_in-text">{{item.toname}}</view>
+                    <view class="weui-media-box__desc">{{item.content}}</view>
+                    <view class="weui-media-box__info">
+                        <view class="weui-media-box__info__meta">{{item.username}}</view>
+                        <view class="weui-media-box__info__meta">{{item.dateline}}</view>
+                        <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">回复数 {{item.count}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+</view>
+</view>
+         <view class="weui-panel__ft" bindtap="addToFront">
+                <view class="weui-cell weui-cell_access weui-cell_link">
+                    <view class="weui-cell__bd">{{load_more}}</view>
+                    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+                </view>
+            </view>
+
+
+
+
+
+
